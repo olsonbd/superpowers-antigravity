@@ -6,11 +6,10 @@ const os = require('os');
 const skillsCore = require('../lib/skills-core');
 
 // Paths
-// Paths
 const repoRoot = path.resolve(__dirname, '..');
 const superpowersSkillsDir = path.join(repoRoot, 'skills');
 const personalSkillsDir = path.join(repoRoot, 'personal-skills');
-const bootstrapFile = path.join(repoRoot, '.codex', 'superpowers-bootstrap.md');
+const bootstrapFile = path.join(repoRoot, '.antigravity', 'superpowers-bootstrap.md');
 const superpowersRepoDir = repoRoot;
 
 // Utility functions
@@ -60,19 +59,19 @@ function runFindSkills() {
     }
 
     console.log('Usage:');
-    console.log('  superpowers-codex use-skill <skill-name>   # Load a specific skill');
+    console.log('  superpowers-antigravity use-skill <skill-name>   # Load a specific skill');
     console.log('');
     console.log('Skill naming:');
-    console.log('  Superpowers skills: superpowers:skill-name (from ~/.codex/superpowers/skills/)');
-    console.log('  Personal skills: skill-name (from ~/.codex/skills/)');
+    console.log('  Superpowers skills: superpowers:skill-name (from ./skills/)');
+    console.log('  Personal skills: skill-name (from ./personal-skills/)');
     console.log('  Personal skills override superpowers skills when names match.');
     console.log('');
     console.log('Note: All skills are disclosed at session start via bootstrap.');
 }
 
 function runBootstrap() {
-    console.log('# Superpowers Bootstrap for Codex');
-    console.log('# ================================');
+    console.log('# Superpowers Bootstrap for Antigravity');
+    console.log('# =====================================');
     console.log('');
 
     // Check for updates (with timeout protection)
@@ -80,7 +79,7 @@ function runBootstrap() {
         console.log('## Update Available');
         console.log('');
         console.log('⚠️  Your superpowers installation is behind the latest version.');
-        console.log('To update, run: `cd ~/.codex/superpowers && git pull`');
+        console.log('To update, run: `git pull`');
         console.log('');
         console.log('---');
         console.log('');
@@ -120,17 +119,17 @@ function runBootstrap() {
     console.log('');
     console.log('# Bootstrap Complete!');
     console.log('# You now have access to all superpowers skills.');
-    console.log('# Use "superpowers-codex use-skill <skill>" to load and apply skills.');
+    console.log('# Use "./.antigravity/superpowers-antigravity use-skill <skill>" to load and apply skills.');
     console.log('# Remember: If a skill applies to your task, you MUST use it!');
 }
 
 function runUseSkill(skillName) {
     if (!skillName) {
-        console.log('Usage: superpowers-codex use-skill <skill-name>');
+        console.log('Usage: superpowers-antigravity use-skill <skill-name>');
         console.log('Examples:');
-        console.log('  superpowers-codex use-skill superpowers:brainstorming  # Load superpowers skill');
-        console.log('  superpowers-codex use-skill brainstorming              # Load personal skill (or superpowers if not found)');
-        console.log('  superpowers-codex use-skill my-custom-skill            # Load personal skill');
+        console.log('  superpowers-antigravity use-skill superpowers:brainstorming  # Load superpowers skill');
+        console.log('  superpowers-antigravity use-skill brainstorming              # Load personal skill (or superpowers if not found)');
+        console.log('  superpowers-antigravity use-skill my-custom-skill            # Load personal skill');
         return;
     }
 
@@ -254,15 +253,15 @@ switch (command) {
         runFindSkills();
         break;
     default:
-        console.log('Superpowers for Codex');
+        console.log('Superpowers for Antigravity');
         console.log('Usage:');
-        console.log('  superpowers-codex bootstrap              # Run complete bootstrap with all skills');
-        console.log('  superpowers-codex use-skill <skill-name> # Load a specific skill');
-        console.log('  superpowers-codex find-skills            # List all available skills');
+        console.log('  superpowers-antigravity bootstrap              # Run complete bootstrap with all skills');
+        console.log('  superpowers-antigravity use-skill <skill-name> # Load a specific skill');
+        console.log('  superpowers-antigravity find-skills            # List all available skills');
         console.log('');
         console.log('Examples:');
-        console.log('  superpowers-codex bootstrap');
-        console.log('  superpowers-codex use-skill superpowers:brainstorming');
-        console.log('  superpowers-codex use-skill my-custom-skill');
+        console.log('  superpowers-antigravity bootstrap');
+        console.log('  superpowers-antigravity use-skill superpowers:brainstorming');
+        console.log('  superpowers-antigravity use-skill my-custom-skill');
         break;
 }
